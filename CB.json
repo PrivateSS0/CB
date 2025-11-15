@@ -183,7 +183,7 @@
     "title": "FilterKeys Setter",
     "description": "Desactiva el retraso del teclado en Windows",
     "type": "bat",
-    "code": "powershell -Command \"Invoke-WebRequest -Uri 'https://github.com/ClinPR1/Spook/raw/main/ClinBoost/FKS.exe' -OutFile '%TEMP%\\\\FKS.exe'; Start-Process '%TEMP%\\\\FKS.exe'\""
+    "code": "@echo off\ntitle FilterKeys Setter Installer\necho ================================\necho   FilterKeys Setter Installer\necho ================================\necho.\necho Selecciona una opcion:\necho 1. Descargar permanentemente\necho 2. Usar temporalmente\necho.\nset /p choice=\"Ingresa 1 o 2: \"\n\nif \"%choice%\"==\"1\" (\n    set \"pathDestino=C:\\\\Herramientas\\\\FKS.exe\"\n    if not exist \"C:\\\\Herramientas\" mkdir \"C:\\\\Herramientas\"\n    echo Descargando FilterKeys Setter en C:\\\\Herramientas...\nbitsadmin /transfer fksDownload /priority normal https://github.com/ClinPR1/Spook/raw/main/ClinBoost/FKS.exe \"%pathDestino%\"\n    echo Ejecutando...\n    start \"\" \"%pathDestino%\"\n) else if \"%choice%\"==\"2\" (\n    set \"pathTemporal=%TEMP%\\\\FKS.exe\"\n    echo Descargando FilterKeys Setter temporalmente...\nbitsadmin /transfer fksDownload /priority normal https://github.com/ClinPR1/Spook/raw/main/ClinBoost/FKS.exe \"%pathTemporal%\"\n    echo Ejecutando...\n    start \"\" \"%pathTemporal%\"\n) else (\n    echo Opcion invalida. Saliendo...\n)\npause"
   },
   {
     "title": "Desactivar Xbox",
@@ -198,4 +198,5 @@
     "code": "Windows Registry Editor Version 5.00\n\n--- Registry File By Adamx\n\n[HKEY_CURRENT_USER\\System\\GameConfigStore]\n\"GameDVR_Enabled\"=dword:00000000\n\"GameDVR_FSEBehaviorMode\"=dword:00000002\n\"GameDVR_HonorUserFSEBehaviorMode\"=dword:00000000\n\"GameDVR_DXGIHonorFSEWindowsCompatible\"=dword:00000001\n\"GameDVR_EFSEFeatureFlags\"=dword:00000000\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\default\\ApplicationManagement\\AllowGameDVR]\n\"value\"=dword:00000000\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\GameDVR]\n\"AllowGameDVR\"=dword:00000000\n\n[HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR]\n\"AppCaptureEnabled\"=dword:00000000"
   }
 ]
+
 
