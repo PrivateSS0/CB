@@ -93,7 +93,7 @@
     "title": "Activar Windows",
     "description": "Descarga CoreActivator para activar Windows 10 o 11, ya sea cualquier versión.",
     "type": "bat",
-    "code": "@echo off\nstart https://clinpr1.github.io/cl/CoreActivator.html\nexit"
+    "code": "@echo off\nstart https://clinpr1.github.io/Spook/CoreActivator.html"
   },
   {
     "title": "Desactivar MapsBroker",
@@ -180,6 +180,12 @@
     "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting]\n\"Disabled\"=dword:00000001"
   },
   {
+    "title": "FilterKeys Setter",
+    "description": "Desactiva el retraso del teclado en Windows",
+    "type": "bat",
+    "code": "powershell -Command \"Invoke-WebRequest -Uri 'https://github.com/ClinPR1/Spook/raw/main/ClinBoost/FKS.exe' -OutFile '%TEMP%\\\\FKS.exe'; Start-Process '%TEMP%\\\\FKS.exe'\""
+  },
+  {
     "title": "Desactivar Xbox",
     "description": "Desactiva servicios de Xbox Live y componentes relacionados para reducir el consumo de recursos en PCs sin uso de Xbox",
     "type": "reg",
@@ -192,3 +198,4 @@
     "code": "Windows Registry Editor Version 5.00\n\n--- Registry File By Adamx\n\n[HKEY_CURRENT_USER\\System\\GameConfigStore]\n\"GameDVR_Enabled\"=dword:00000000\n\"GameDVR_FSEBehaviorMode\"=dword:00000002\n\"GameDVR_HonorUserFSEBehaviorMode\"=dword:00000000\n\"GameDVR_DXGIHonorFSEWindowsCompatible\"=dword:00000001\n\"GameDVR_EFSEFeatureFlags\"=dword:00000000\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\default\\ApplicationManagement\\AllowGameDVR]\n\"value\"=dword:00000000\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\GameDVR]\n\"AllowGameDVR\"=dword:00000000\n\n[HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR]\n\"AppCaptureEnabled\"=dword:00000000"
   }
 ]
+
