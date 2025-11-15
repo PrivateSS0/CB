@@ -1,0 +1,194 @@
+[
+  {
+    "title": "Desactivar Cortana",
+    "description": "Elimina Cortana del sistema",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search]\n\"AllowCortana\"=dword:00000000"
+  },
+  {
+    "title": "Limpiar Temp",
+    "description": "Elimina archivos temporales del usuario actual",
+    "type": "bat",
+    "code": "del /q /f /s %TEMP%\\*"
+  },
+  {
+    "title": "Desactivar efectos visuales",
+    "description": "Mejora el rendimiento desactivando animaciones y sombras",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n[HKEY_CURRENT_USER\\Control Panel\\Desktop\\WindowMetrics]\n\"MinAnimate\"=\"0\"\n\n[HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects]\n\"VisualFXSetting\"=dword:00000002"
+  },
+  {
+    "title": "Deshabilitar Superfetch",
+    "description": "Apaga el servicio SysMain para reducir uso de disco y CPU",
+    "type": "bat",
+    "code": "sc stop \"SysMain\"\nsc config \"SysMain\" start= disabled"
+  },
+  {
+    "title": "Limpiar caché DNS",
+    "description": "Vacía la caché DNS para mejorar la navegación y resolver problemas de conexión",
+    "type": "bat",
+    "code": "ipconfig /flushdns"
+  },
+  {
+    "title": "Limpiar Prefetch",
+    "description": "Elimina archivos prefetch viejos para mejorar rendimiento",
+    "type": "bat",
+    "code": "del /s /q C:\\Windows\\Prefetch\\*"
+  },
+  {
+    "title": "Desactivar notificaciones",
+    "description": "Evita interrupciones y reduce consumo de recursos por notificaciones",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n[HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\PushNotifications]\n\"ToastEnabled\"=dword:00000000"
+  },
+  {
+    "title": "Game Tweak",
+    "description": "Optimiza la prioridad de los juegos reduciendo la latencia del sistema",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile]\n\"SystemResponsiveness\"=dword:00000000"
+  },
+  {
+    "title": "Desactivar Antivirus",
+    "description": "Desactiva Windows Defender, la protección en tiempo real y los servicios relacionados para liberar recursos del sistema",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n; Disable Windows Defender Features\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender]\n\"DisableAntiSpyware\"=dword:00000001\n\"DisableRoutinelyTakingAction\"=dword:00000001\n\"ServiceKeepAlive\"=dword:00000000\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Real-Time Protection]\n\"DisableBehaviorMonitoring\"=dword:00000001\n\"DisableIOAVProtection\"=dword:00000001\n\"DisableOnAccessProtection\"=dword:00000001\n\"DisableRealtimeMonitoring\"=dword:00000001\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Reporting]\n\"DisableEnhancedNotifications\"=dword:00000001\n\n[HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Windows\\CurrentVersion\\PushNotifications]\n\"NoToastApplicationNotification\"=dword:00000001\n\"NoToastApplicationNotificationOnLockScreen\"=dword:00000001\n\n;Disable Windows Defender Services\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WinDefend]\n\"Start\"=dword:00000004\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SecurityHealthService]\n\"Start\"=dword:00000004\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WdNisSvc]\n\"Start\"=dword:00000004\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Sense]\n\"Start\"=dword:00000004\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\wscsvc]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Delay Teclado",
+    "description": "Saca delay de tu teclado",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\kbdclass\\Parameters]\n\"KeyboardDataQueueSize\"=dword:00000014"
+  },
+  {
+    "title": "Delay Mouse",
+    "description": "Saca delay de tu Mouse",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\mouclass\\Parameters]\n\"MouseDataQueueSize\"=dword:00000014"
+  },
+  {
+    "title": "Delay Mando",
+    "description": "Saca delay de tu Mando",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_CURRENT_USER\\Control Panel\\Mouse]\n\"MouseSensitivity\"=\"10\"\n\"SmoothMouseXCurve\"=hex:\\\n\t00,00,00,00,00,00,00,00,\\\n\tC0,CC,0C,00,00,00,00,00,\\\n\t80,99,19,00,00,00,00,00,\\\n\t40,66,26,00,00,00,00,00,\\\n\t00,33,33,00,00,00,00,00\n\"SmoothMouseYCurve\"=hex:\\\n\t00,00,00,00,00,00,00,00,\\\n\t00,00,38,00,00,00,00,00,\\\n\t00,00,70,00,00,00,00,00,\\\n\t00,00,A8,00,00,00,00,00,\\\n\t00,00,E0,00,00,00,00,00\n\n[HKEY_USERS\\.DEFAULT\\Control Panel\\Mouse]\n\"MouseSpeed\"=\"0\"\n\"MouseThreshold1\"=\"0\"\n\"MouseThreshold2\"=\"0\""
+  },
+  {
+    "title": "Desactivar Bluetooth",
+    "description": "Desactiva servicios de Bluetooth para liberar recursos si no se usan dispositivos Bluetooth",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\nyoutube.com/Mazthertutoriales\n\n;Disable Bluetooth Audio Gateway Service\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\BTAGService]\n\"Start\"=dword:00000004\n\n;Disable Bluetooth Support Service\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\bthserv]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Desactivar impresión",
+    "description": "Desactiva servicios de impresión y notificaciones para liberar recursos si no se usan impresoras",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\nyoutube.com/Mazthertutoriales\n\n;Disable Print Spooler\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Spooler]\n\"Start\"=dword:00000004\n\n;Disable Printer Extensions and Notifications\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\PrintNotify]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Windows Update",
+    "description": "Desactiva las actualizaciones automáticas de Windows",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n;Disable Windows Update\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\wuauserv]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Activar Windows",
+    "description": "Descarga CoreActivator para activar Windows 10 o 11, ya sea cualquier versión.",
+    "type": "bat",
+    "code": "@echo off\nstart https://clinpr1.github.io/cl/CoreActivator.html\nexit"
+  },
+  {
+    "title": "Desactivar MapsBroker",
+    "description": "Desactiva el servicio MapsBroker para liberar recursos del sistema si no se usan mapas o geolocalización",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\nyoutube.com/Mazthertutoriales\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\MapsBroker]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Desactivar servicio de fax",
+    "description": "Apaga el servicio de fax para liberar recursos si no se usa",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Fax]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Windows Media Player",
+    "description": "Deshabilita el servicio que comparte contenido multimedia en red",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WMPNetworkSvc]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Impresión en Red",
+    "description": "Evita que se inicien servicios relacionados con impresión en red para ahorrar recursos",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Spooler]\n\"Start\"=dword:00000004\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\PrintNotify]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Actualizaciones drivers",
+    "description": "Evita que Windows descargue y actualice drivers automáticamente",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate]\n\"ExcludeWUDriversInQualityUpdate\"=dword:00000001"
+  },
+  {
+    "title": "Aumentar red",
+    "description": "Desactiva la administración automática de ventanas TCP para mejorar la latencia en juegos y streaming",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters]\n\"EnableTCPChimney\"=dword:00000000\n\"EnableRSS\"=dword:00000000\n\"EnableTCPA\"=dword:00000000"
+  },
+  {
+    "title": "Windows Biometric",
+    "description": "Apaga el servicio biométrico si no usás huellas o reconocimiento facial",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WbioSrvc]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Registro Remoto",
+    "description": "Impide el acceso remoto para aumentar la seguridad",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\RemoteRegistry]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Agente Protección",
+    "description": "Detiene el servicio de protección de software para evitar chequeos de licencia constantes",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\sppsvc]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Tienda de Microsoft",
+    "description": "Evita que la Tienda Microsoft actualice automáticamente las apps",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\ClipSVC]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Experiencias Conectadas",
+    "description": "Apaga el servicio que envía datos de uso y telemetría a Microsoft",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\DiagSvc]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Servicio de Planificador",
+    "description": "Desactiva tareas programadas de diagnóstico que pueden consumir recursos",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\DiagTrack]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Centro de Seguridad",
+    "description": "Apaga el centro de seguridad de Windows para liberar recursos (no recomendado sin otro antivirus)",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\wscsvc]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Error Reporting",
+    "description": "Evita que Windows envíe reportes de error, ahorrando recursos y evitando ventanas molestas",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting]\n\"Disabled\"=dword:00000001"
+  },
+  {
+    "title": "Desactivar Xbox",
+    "description": "Desactiva servicios de Xbox Live y componentes relacionados para reducir el consumo de recursos en PCs sin uso de Xbox",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\nyoutube.com/Mazthertutoriales\n\n;Disable Xbox Live Game Save\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\XblGameSave]\n\"Start\"=dword:00000004\n\n;Disable Xbox Live Networking Service\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\XboxNetApiSvc]\n\"Start\"=dword:00000004\n\n;Disable Xbox Accessory Management Service\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\XboxGipSvc]\n\"Start\"=dword:00000004\n\n;Disable Xbox Live Auth Manager\n[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\XblAuthManager]\n\"Start\"=dword:00000004"
+  },
+  {
+    "title": "Desactivar Game DVR",
+    "description": "Desactiva Game DVR y grabación en segundo plano para mejorar el rendimiento en juegos y reducir uso de recursos",
+    "type": "reg",
+    "code": "Windows Registry Editor Version 5.00\n\n--- Registry File By Adamx\n\n[HKEY_CURRENT_USER\\System\\GameConfigStore]\n\"GameDVR_Enabled\"=dword:00000000\n\"GameDVR_FSEBehaviorMode\"=dword:00000002\n\"GameDVR_HonorUserFSEBehaviorMode\"=dword:00000000\n\"GameDVR_DXGIHonorFSEWindowsCompatible\"=dword:00000001\n\"GameDVR_EFSEFeatureFlags\"=dword:00000000\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\default\\ApplicationManagement\\AllowGameDVR]\n\"value\"=dword:00000000\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\GameDVR]\n\"AllowGameDVR\"=dword:00000000\n\n[HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR]\n\"AppCaptureEnabled\"=dword:00000000"
+  }
+]
