@@ -9,6 +9,7 @@
     "title": "Limpiar Temp",
     "description": "Elimina archivos temporales del usuario actual",
     "type": "bat",
+    "button": true,
     "code": "del /q /f /s %TEMP%\\*"
   },
   {
@@ -200,6 +201,7 @@
     "code": "Windows Registry Editor Version 5.00\n\n--- Registry File By Adamx\n\n[HKEY_CURRENT_USER\\System\\GameConfigStore]\n\"GameDVR_Enabled\"=dword:00000000\n\"GameDVR_FSEBehaviorMode\"=dword:00000002\n\"GameDVR_HonorUserFSEBehaviorMode\"=dword:00000000\n\"GameDVR_DXGIHonorFSEWindowsCompatible\"=dword:00000001\n\"GameDVR_EFSEFeatureFlags\"=dword:00000000\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\default\\ApplicationManagement\\AllowGameDVR]\n\"value\"=dword:00000000\n\n[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\GameDVR]\n\"AllowGameDVR\"=dword:00000000\n\n[HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR]\n\"AppCaptureEnabled\"=dword:00000000"
   }
 ]
+
 
 
 
